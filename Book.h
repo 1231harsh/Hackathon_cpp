@@ -10,6 +10,16 @@ class Book{
             string isbn;
             float price;
       public:
+            Book(){}
+            Book(int id,string title,string author,string subject,string isbn,float price){
+                  this->id=id;
+                  this->title=title;
+                  this->author=author;
+                  this->subject=subject;
+                  this->isbn=isbn;
+                  this->price=price;
+            }
+
             bool addBook(vector<Book*> &bookList);
             bool editBook(vector<Book*> &bookList);
 
@@ -26,5 +36,8 @@ class Book{
             void setSubject(string bSubject) { subject=bSubject; }
 
             string getIsbn() { return isbn; }
-            void setIsbn(int bIsbn) { isbn = bIsbn; }
+            void setIsbn(string bIsbn) { isbn = bIsbn; }
+
+            float getPrice(){return price;}
+            void setPrice(float bPrice){price=bPrice;}
 };

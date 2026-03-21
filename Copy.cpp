@@ -44,3 +44,10 @@ bool Copy::updateStatus(vector<Copy *> &copyList)
 
       copyList.push_back(c);
 }
+
+bool Copy::searchCopy(int copyId, vector<Copy *> &copyList){
+      for(Copy* val: copyList){
+            if(val->getId()==copyId&&val->getStatus()=="Available") return true;
+      }
+      return false;
+}    

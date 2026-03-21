@@ -69,14 +69,18 @@ bool Member::checkMember(int id, vector<Member *> &memberList){
       }
       return false;
 }
-
-int Member::calculateFine(int cId, vector<Member *> &memberList, vector<IssueRecord*> &recordList){
-      IssueRecord *ir;
-      for(IssueRecord* val:recordList){
-            if(val->getCopyId()==id){
-                  ir=val;
+bool Member::getStatus(int memberId, vector<Member *> memberList){
+      Member* m;
+      for(Member* val : memberList){
+            if(val->getId()==memberId){
+                  m=val;
+                  break;
             }
-      }
+      }     
+      return m->getPaid_status();
+}
+
+int Member::calculateFine(IssueRecord* ir){
       time_t returnDate=ir->getReturn_date();
       time_t issueDate=ir->getIssue_date();
 

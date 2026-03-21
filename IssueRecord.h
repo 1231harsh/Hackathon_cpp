@@ -1,6 +1,7 @@
 #include<iostream>
 #include<vector>
 #include<ctime>
+#include"Copy.h"
 using namespace std;
 
 class IssueRecord{
@@ -13,9 +14,28 @@ class IssueRecord{
             time_t return_date;
             float fine_amount;
       public:
-            bool assignCopy(int member_id,vector<IssueRecord*> recordList);
-            bool updateStatus(int copy_id, vector<IssueRecord*> recordList);
+            IssueRecord(int id,
+                        int copy_id,
+                        int member_id,
+                        time_t issue_date,
+                        time_t return_duedate,
+                        time_t return_date,
+                        float fine_amount)
+            {
+                  this->id=id;
+                  this->copy_id=copy_id;
+                  this->member_id=member_id;
+                  this->issue_date=issue_date;
+                  this->return_duedate=return_duedate;
+                  this->return_date=return_date;       
+                  this->fine_amount=fine_amount;          
+            }
+                        
+            bool assignCopy(int member_id, int copyId, vector<Copy *> &copyList, vector<IssueRecord *> &recordList);
+            // bool updateStatus(int copy_id, vector<IssueRecord*> &recordList);
             time_t rdd(int member_id);
+
+            int getId(){return id;};
 
             int getCopyId(){return copy_id;}
             void setCopyId(int cId ){copy_id=cId;}

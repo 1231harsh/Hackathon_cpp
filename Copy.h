@@ -9,9 +9,23 @@ class Copy{
             string rack;
             string status;
       public:
+            Copy(){status="Available";}
+
+            Copy(int id,
+                 int book_id,
+                 string rack,
+                 string status)
+            {
+                  this->id=id;
+                  this->book_id=book_id;
+                  this->rack=rack;
+                  this->status=status;
+            }
+
             bool addCopy(vector<Copy*> &copyList);
             bool editCopy(vector<Copy*> &copyList); 
             bool updateStatus(vector<Copy *> &copyList);
+            bool searchCopy(int copyId,vector<Copy*> &copyList);
             
             int getId(){return id;}
             void setId(int cid){id=cid;}

@@ -23,7 +23,10 @@ bool Book::addBook(vector<Book *> &bookList){
 
       cout << "Enter Isbn" << endl;
       cin >> isbn;
-      b->setTitle(isbn);
+      b->setIsbn(isbn);
+
+      cout<<"Enter Price"<<endl;
+      cin>>price;
 
       bookList.push_back(b);
 
