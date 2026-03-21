@@ -52,5 +52,8 @@ class IssueRecord{
             time_t getReturn_date() { return issue_date; }
             void setReturn_date() { return_date = time(0);}
 
+            float getFine_amount(){return fine_amount;}
+            void setFine_amount(float amt){fine_amount=amt;}
+
 
 };    
