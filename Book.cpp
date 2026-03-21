@@ -1,8 +1,8 @@
 #include<iostream>
-#include<vector>;
-#include "Book.h";
+#include<vector>
+#include "Book.h"
 
-bool addBook(vector<Book *> &bookList){
+bool Book::addBook(vector<Book *> &bookList){
       Book* b=new Book();
       string title;
       string author;

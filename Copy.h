@@ -11,6 +11,7 @@ class Copy{
       public:
             bool addCopy(vector<Copy*> &copyList);
             bool editCopy(vector<Copy*> &copyList); 
+            bool updateStatus(vector<Copy *> &copyList);
             
             int getId(){return id;}
             void setId(int cid){id=cid;}

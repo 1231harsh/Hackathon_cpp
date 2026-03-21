@@ -3,7 +3,7 @@
 #include "Copy.h"
 #include "Book.h"
 
-bool addCopy(vector<Copy *> &copyList){
+bool Copy::addCopy(vector<Copy *> &copyList){
       Copy* c=new Copy();
       int bookId;
       string rack;
@@ -23,7 +23,7 @@ bool addCopy(vector<Copy *> &copyList){
 
       copyList.push_back(c);
 }
-bool updateStatus(vector<Copy *> &copyList)
+bool Copy::updateStatus(vector<Copy *> &copyList)
 {
       Copy *c;
       int id;
