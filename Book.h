@@ -12,7 +12,6 @@ class Book{
       public:
             Book(){}
             Book(int id,string title,string author,string subject,string isbn,float price){
-                  this->id=id;
                   this->title=title;
                   this->author=author;
                   this->subject=subject;

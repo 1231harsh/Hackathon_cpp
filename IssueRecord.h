@@ -14,6 +14,7 @@ class IssueRecord{
             time_t return_date;
             float fine_amount;
       public:
+            IssueRecord();
             IssueRecord(int id,
                         int copy_id,
                         int member_id,
