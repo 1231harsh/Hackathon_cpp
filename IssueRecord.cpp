@@ -1,6 +1,7 @@
 #include <iostream>
 #include "IssueRecord.h"
-#include "Copy.h"
+
+class Copy;
 
 bool IssueRecord::assignCopy(int member_id,int copyId,vector<Copy*> &copyList,vector<IssueRecord *> &recordList){
       int id;

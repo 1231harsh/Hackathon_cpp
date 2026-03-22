@@ -1,10 +1,11 @@
 #include <iostream>
 #include <ctime>
-#include "IssueRecord.h"
-#include "Member.h"
+#include <vector>
 #include "Payment.h"
 using namespace std;
 
+class IssueRecord;
+class Member;
 int Payment::returnBook(int memberId, vector<IssueRecord *> &recordList, vector<Member *> &memberList,vector<Payment* > &paymentList){
       Member *m;
       IssueRecord* ir;
@@ -15,7 +16,7 @@ int Payment::returnBook(int memberId, vector<IssueRecord *> &recordList, vector<
             }
       }
       for (IssueRecord* val : recordList){
-            if (val->getId() == memberId){
+            if (val->getMember_id() == memberId){
                   ir = val;
                   break;
             }
@@ -24,9 +25,9 @@ int Payment::returnBook(int memberId, vector<IssueRecord *> &recordList, vector<
       int fine=m->calculateFine(ir);
 
       m->setPaid_status("Paid");
-      m->setNextpayment_duedate(NULL);
+      m->setNextpayment_duedate(0);
 
-      Payment* p=new Payment(m->getId(),fine,"Online",time(0),NULL);
+      Payment* p=new Payment(m->getId(),fine,"Online",time(0),0);
 
       paymentList.push_back(p);
       

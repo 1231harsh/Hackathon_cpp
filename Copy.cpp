@@ -1,7 +1,8 @@
 #include<iostream>
 #include<vector>
 #include "Copy.h"
-#include "Book.h"
+
+class Book;
 
 bool Copy::addCopy(vector<Copy *> &copyList){
       Copy* c=new Copy();
